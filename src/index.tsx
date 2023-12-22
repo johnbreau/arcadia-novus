@@ -4,6 +4,7 @@ import { render } from 'react-dom'
 
 // Import components
 import { Bookshelf } from './components/bookshelf'
+import { CharacterBuild } from './components/character-build'
 
 // Import styles
 import './styles/styles.css'
@@ -12,4 +13,6 @@ import './styles/styles.css'
 const rootElement = document.getElementById('root')
 
 // Render Bookshelf component in the DOM
-render(<Bookshelf />, rootElement)
+render(
+<CharacterBuild />, 
+rootElement)
