@@ -1,0 +1,28 @@
+.navigation {
+    background-color: purple;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: auto;
+  }
+  li {
+      padding: 10px;
+      list-style-type: none;
+    }
+    .fade {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+  }
+  .fade:hover {
+    opacity: .5;
+  }
+  a {
+		color: white;
+    font-weight: 700;
+    text-decoration: none;
+
+		&:visited {
+			color: pink;
+		}
+	}
