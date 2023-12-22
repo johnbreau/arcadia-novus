@@ -25,6 +25,10 @@ app.use(bodyParser.json())
 // Implement books route
 app.use('/books', booksRouter)
 
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
 // Implement 500 error route
 app.use(function (err, req, res, next) {
   console.error(err.stack)
