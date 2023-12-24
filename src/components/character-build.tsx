@@ -7,13 +7,34 @@ import { fourSidedDieFunc } from '../services/dice-service'
 import './../styles/character.css'
 
 export const CharacterBuild = () => {
+    const  [inputValue, setInputValue] =  useState('');
+    const [selectedOption, setSelectedOption] = useState("option1");
+    const [charStrength] = useState<number>(fourSidedDieFunc());
 
-    console.log('gimme a number', fourSidedDieFunc());
+    const  handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
+        setInputValue(event.target.value);
+    };
 
-    return (
-        <div className="character">
-            <NavBar />
-            <Bookshelf />
-        </div>
+    const  handleDropdownChange = (event: { target: { value: React.SetStateAction<string> } }) => {
+		setSelectedOption(event.target.value);
+	};
+
+    return  (
+        <form>
+            <label>Input Value:
+                <input  type="text"  value={inputValue} onChange={handleChange} />
+            </label>
+            <label>Character Strength:
+                <input  type="number"  value={charStrength} readOnly />
+            </label>
+            <label>
+			Select an option:
+				<select  value={selectedOption} onChange={handleDropdownChange}>
+				<option  value="option1">Option 1</option>
+				<option  value="option2">Option 2</option>
+				<option  value="option3">Option 3</option>
+			</select>
+		</label>
+        </form>
     )
-}
+};
